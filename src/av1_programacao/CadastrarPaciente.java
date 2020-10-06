@@ -205,6 +205,7 @@ public class CadastrarPaciente extends javax.swing.JFrame {
         
         limparCampos();
         
+        
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void btnInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInfoActionPerformed
@@ -212,6 +213,7 @@ public class CadastrarPaciente extends javax.swing.JFrame {
         String textoInformativo = "Informações:" + "\n";;
         Collections.sort(pacientes);
         Paciente pacienteMaisVelho = (Paciente) pacientes.get(0);
+        Paciente pacienteMaisNovo = (Paciente) pacientes.get(pacientes.size()-1);
         int qtdPacientes = pacientes.size();
         int numeroPacientesFeminino = pacientes.stream().filter(p -> p.getSexo().equals("Feminino")).collect(Collectors.toList()).size();
         int numeroPacientesMasculino = pacientes.stream().filter(p -> p.getSexo().equals("Masculino")).collect(Collectors.toList()).size();
@@ -220,6 +222,9 @@ public class CadastrarPaciente extends javax.swing.JFrame {
         textoInformativo += "Paciente mais velho:" + "\n";
         textoInformativo += "Nome: " + pacienteMaisVelho.getNome() + "\n";
         textoInformativo += "Idade: " + pacienteMaisVelho.getIdade() + "\n";
+        textoInformativo += "Paciente mais novo:" + "\n";
+        textoInformativo += "Nome: " + pacienteMaisNovo.getNome() + "\n";
+        textoInformativo += "Idade: " + pacienteMaisNovo.getIdade() + "\n";
         textoInformativo += "Quantidade de Pacientes do sexo Feminino: " + numeroPacientesFeminino + "\n";
         textoInformativo += "Quantidade de Pacientes do sexo Masculino: " + numeroPacientesMasculino + "\n";
                       
